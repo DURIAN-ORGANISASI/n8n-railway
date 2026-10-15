@@ -52,15 +52,45 @@ Pada **service n8n**:
 
 ### Tahap 6 — Atur variabel n8n
 
-1. Buat encryption key di komputer:
+1. Jalankan pembuat encryption key di folder repo:
    - **Windows PowerShell:** `.\scripts\generate-key.ps1`
    - **Linux/macOS:** `sh scripts/generate-key.sh`
-2. Buka file [`n8n-service-variables.example.txt`](./n8n-service-variables.example.txt), lalu salin seluruh isinya ke **service n8n → Variables → Raw Editor**.
-3. Ganti `REPLACE_WITH_YOUR_64_CHARACTER_HEX_KEY` dengan key yang dibuat tadi.
-4. Pastikan namespace `Postgres` di referensi variabel sama persis dengan nama service database.
+2. Salin blok variabel di bawah ke **Railway → service n8n → Variables → Raw Editor**.
+3. Ganti `REPLACE_WITH_YOUR_64_CHARACTER_HEX_KEY` dengan key yang dihasilkan di komputermu.
+4. Pastikan nama service database adalah `Postgres`. Jika berbeda, ubah namespace `Postgres` pada lima referensi database di bawah.
 5. Simpan key di tempat aman. Jangan mengganti key pada instance yang sudah menyimpan kredensial.
 
-**Catatan volume:** Template menggunakan `RAILWAY_RUN_UID=0` untuk mengatasi masalah izin akses volume pada setup ini. Ini membuat proses berjalan sebagai root, sehingga ada trade-off keamanan.
+> **Penting:** Blok ini hanya untuk service **n8n**, bukan PostgreSQL. Jangan pernah menaruh encryption key asli, password, atau token rahasia ke repo publik.
+
+```dotenv
+N8N_PORT=5678
+N8N_PROTOCOL=https
+N8N_HOST=${{RAILWAY_PUBLIC_DOMAIN}}
+N8N_EDITOR_BASE_URL=https://${{RAILWAY_PUBLIC_DOMAIN}}
+WEBHOOK_URL=https://${{RAILWAY_PUBLIC_DOMAIN}}
+N8N_PROXY_HOPS=1
+N8N_SECURE_COOKIE=true
+N8N_ENCRYPTION_KEY=REPLACE_WITH_YOUR_64_CHARACTER_HEX_KEY
+N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+RAILWAY_RUN_UID=0
+
+DB_TYPE=postgresdb
+DB_POSTGRESDB_HOST=${{Postgres.PGHOST}}
+DB_POSTGRESDB_PORT=${{Postgres.PGPORT}}
+DB_POSTGRESDB_DATABASE=${{Postgres.PGDATABASE}}
+DB_POSTGRESDB_USER=${{Postgres.PGUSER}}
+DB_POSTGRESDB_PASSWORD=${{Postgres.PGPASSWORD}}
+
+GENERIC_TIMEZONE=Asia/Jakarta
+TZ=Asia/Jakarta
+N8N_DIAGNOSTICS_ENABLED=false
+N8N_PERSONALIZATION_ENABLED=false
+N8N_VERSION_NOTIFICATIONS_ENABLED=false
+EXECUTIONS_DATA_PRUNE=true
+EXECUTIONS_DATA_MAX_AGE=168
+```
+
+**Catatan volume:** `RAILWAY_RUN_UID=0` adalah workaround izin volume untuk setup ini dan membuat proses berjalan sebagai root, sehingga ada trade-off keamanan. File [`n8n-service-variables.example.txt`](./n8n-service-variables.example.txt) tetap tersedia jika ingin mengambil blok yang sama dari file.
 
 ### Tahap 7 — Deploy dan uji
 
