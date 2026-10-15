@@ -34,8 +34,8 @@ if "REPLACE_WITH_YOUR_64_CHARACTER_HEX_KEY" not in variables:
 if "DO NOT paste this file into the Postgres service" not in variables:
     errors.append("The Railway variables template must clearly say it is for n8n only")
 readme = (ROOT / "README.md").read_text(encoding="utf-8") if (ROOT / "README.md").exists() else ""
-postgres_step = readme.find("Tahap 2 — Tambahkan PostgreSQL terlebih dahulu")
-n8n_deploy_step = readme.find("Tahap 4 — Deploy service n8n dari GitHub")
+postgres_step = readme.find("1. **Buat project dan PostgreSQL.**")
+n8n_deploy_step = readme.find("3. **Deploy n8n.**")
 if postgres_step < 0 or n8n_deploy_step < 0 or postgres_step > n8n_deploy_step:
     errors.append("README must instruct users to create PostgreSQL before deploying n8n")
 if "jangan membuat atau menempelkan variabel database secara manual" not in readme:
