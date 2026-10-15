@@ -1,3 +1,21 @@
+<div align="center">
+
+# 🚀 n8n Railway Starter
+
+**Deploy n8n + PostgreSQL di Railway — panduan lengkap dalam bahasa Indonesia.**
+
+![n8n](https://img.shields.io/badge/n8n-2.32.6-EA4B71?logo=n8n&logoColor=white)
+![Railway](https://img.shields.io/badge/Platform-Railway-7B42BC?logo=railway&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Build-Dockerfile-2496ED?logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+[Mulai instalasi](#tutorial-pemasangan-di-railway) · [Variabel siap salin](#variabel-service-n8n-siap-salin) · [Troubleshooting](#troubleshooting)
+
+</div>
+
+---
+
 # n8n Railway Starter — PostgreSQL terlebih dahulu
 
 Template komunitas untuk memasang satu instance **n8n** di Railway menggunakan **PostgreSQL Railway** dan penyimpanan persisten. Repo ini berisi konfigurasi deployment dan tutorial; bukan fork atau salinan source code n8n.
@@ -5,6 +23,17 @@ Template komunitas untuk memasang satu instance **n8n** di Railway menggunakan *
 > **Urutan wajib:** buat service PostgreSQL di Railway terlebih dahulu, tunggu sampai database sehat, baru deploy service n8n dari repo ini. Repo ini tidak membuat service database di Railway secara otomatis.
 
 > **Tentang variabel:** Railway otomatis menyediakan variabel database pada service PostgreSQL. Jangan membuat ulang variabel database di service PostgreSQL dan jangan menempelkan konfigurasi n8n di service database. File `n8n-service-variables.example.txt` hanya untuk service **n8n**; di dalamnya ada referensi ke variabel yang sudah disediakan oleh service PostgreSQL.
+
+## Navigasi cepat
+
+- [Arsitektur](#arsitektur)
+- [Yang dibutuhkan](#yang-dibutuhkan)
+- [Tutorial pemasangan di Railway](#tutorial-pemasangan-di-railway)
+- [Variabel service n8n — siap salin](#variabel-service-n8n-siap-salin)
+- [Checklist sebelum selesai](#checklist-sebelum-selesai)
+- [Uji lokal](#uji-lokal-opsional)
+- [Troubleshooting](#troubleshooting)
+- [Backup dan lisensi](#backup-dan-upgrade)
 
 ## Arsitektur
 
@@ -103,6 +132,51 @@ Lakukan ini pada **service n8n**, bukan pada Postgres.
 **Jangan tempel isi `n8n-service-variables.example.txt` ke service Postgres.** File tersebut berisi konfigurasi aplikasi n8n dan referensi untuk membaca nilai database yang sudah disediakan Railway.
 
 Jika Railway tidak dapat menyelesaikan referensi `${{Postgres...}}`, periksa nama service, project, dan environment. Jangan mengganti referensi itu dengan kata sandi atau host tebakan. Pilih referensi melalui autocomplete Railway bila tersedia.
+
+## Variabel service n8n — siap salin
+
+Agar variabel penting mudah ditemukan, blok ini ditampilkan juga di README. Semua `${{...}}` adalah **Railway Reference Variables**; nilai password database sebenarnya tetap dikelola Railway dan tidak ditulis ke repo. Ganti `REPLACE_WITH_YOUR_64_CHARACTER_HEX_KEY` dengan encryption key unik yang dibuat di komputermu.
+
+> **Tempel hanya ke:** Railway → service **n8n** → Variables → Raw Editor. **Jangan tempel ke service Postgres.**
+
+```dotenv
+N8N_PORT=${{PORT}}
+N8N_PROTOCOL=https
+N8N_HOST=${{RAILWAY_PUBLIC_DOMAIN}}
+N8N_EDITOR_BASE_URL=https://${{RAILWAY_PUBLIC_DOMAIN}}
+WEBHOOK_URL=https://${{RAILWAY_PUBLIC_DOMAIN}}
+N8N_PROXY_HOPS=1
+N8N_SECURE_COOKIE=true
+N8N_ENCRYPTION_KEY=REPLACE_WITH_YOUR_64_CHARACTER_HEX_KEY
+N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+
+DB_TYPE=postgresdb
+DB_POSTGRESDB_HOST=${{Postgres.PGHOST}}
+DB_POSTGRESDB_PORT=${{Postgres.PGPORT}}
+DB_POSTGRESDB_DATABASE=${{Postgres.PGDATABASE}}
+DB_POSTGRESDB_USER=${{Postgres.PGUSER}}
+DB_POSTGRESDB_PASSWORD=${{Postgres.PGPASSWORD}}
+
+GENERIC_TIMEZONE=Asia/Jakarta
+TZ=Asia/Jakarta
+N8N_DIAGNOSTICS_ENABLED=false
+N8N_PERSONALIZATION_ENABLED=false
+N8N_VERSION_NOTIFICATIONS_ENABLED=false
+EXECUTIONS_DATA_PRUNE=true
+EXECUTIONS_DATA_MAX_AGE=168
+```
+
+### Variabel ada di service mana?
+
+| Lokasi Railway | Yang perlu dilakukan |
+|---|---|
+| **Postgres → Variables** | Railway membuat `PGHOST`, `PGPORT`, `PGDATABASE`, `PGUSER`, dan `PGPASSWORD` otomatis. Jangan membuat atau menempelkan variabel database secara manual. |
+| **n8n → Variables** | Tempel blok di atas. Referensi `${{Postgres.PGHOST}}` dan variabel serupa mengambil nilai dari service Postgres. |
+| **Repo GitHub** | Blok contoh ini berisi referensi dan placeholder saja. Jangan pernah menambahkan API key, password aktual, token Telegram, atau encryption key asli. |
+
+Jika nama service database bukan `Postgres`, ganti namespace `Postgres` pada semua reference variables agar cocok dengan nama service Railway kamu.
+
+---
 
 ## Tahap 7 — Verifikasi deployment
 
