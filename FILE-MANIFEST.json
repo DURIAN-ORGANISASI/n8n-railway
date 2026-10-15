@@ -36,8 +36,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 14927,
-    "sha256": "87577bb8e43734dd90772e2327f25f842095fd10d02eb4b7ef5ad7ff07d9657e"
+    "bytes": 4397,
+    "sha256": "c93666b5c04641efa5776ef98d38f1e1f625bb46fdd16aca86522b3200bcad2b"
   },
   {
     "path": "SECURITY.md",
@@ -51,8 +51,8 @@
   },
   {
     "path": "n8n-service-variables.example.txt",
-    "bytes": 1434,
-    "sha256": "9541205e99c1c7cc3ae54b545ed6d36e25bac29dce068fa8ea190541243a97fd"
+    "bytes": 1398,
+    "sha256": "10d59a1800f7e912db9b509458024e51f9ccc639c2b87c7cb39b029f3150308e"
   },
   {
     "path": "railway.json",
