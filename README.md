@@ -14,7 +14,11 @@
 
 3. **Deploy n8n.** Di project Railway yang sama, pilih **New → GitHub Repo**, lalu pilih repo ini. Biarkan Root Directory kosong.
 
-4. **Buat domain dan volume.** Pada service n8n, buka **Settings → Networking → Generate Domain**, lalu tambahkan volume dengan mount path `/home/node/.n8n`.
+4. **Buat domain dan volume.** Pada service n8n:
+   - Buka **Settings → Networking → Generate Domain**. Jika diminta target port, isi **5678**. Domain ini dipakai untuk membuka n8n dan URL webhook.
+   - Tambahkan volume dengan mount path `/home/node/.n8n`.
+
+   Variabel `N8N_HOST`, `N8N_EDITOR_BASE_URL`, dan `WEBHOOK_URL` sudah menggunakan `${{RAILWAY_PUBLIC_DOMAIN}}`, jadi domain tidak perlu diisi manual pada blok variabel.
 
 5. **Buat key dan pasang variabel.** Jalankan:
    - Windows: `.\scripts\generate-key.ps1`
