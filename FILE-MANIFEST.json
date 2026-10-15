@@ -1,0 +1,77 @@
+[
+  {
+    "path": ".dockerignore",
+    "bytes": 88,
+    "sha256": "e330073c1b667b0d782f927226fcf8004fa2fedff26425b7a5b11ea8f7b58d4d"
+  },
+  {
+    "path": ".env.example",
+    "bytes": 434,
+    "sha256": "ee51e23f92ca220f01269f167c61414b059ce72cdfbf972e10252459c04086b1"
+  },
+  {
+    "path": ".github/workflows/validate.yml",
+    "bytes": 375,
+    "sha256": "3b3b729dd1549dac520ed51d53d9445f88dfcfddd13d95798a1446465df83437"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 170,
+    "sha256": "c3dc31914e7fe498ac2d035d1767e06a1c1371d2fcd00c33f328d1e2fa05a0f7"
+  },
+  {
+    "path": "CONTRIBUTING.md",
+    "bytes": 508,
+    "sha256": "3f2bed3807b2abd8ce47f916c69c697b60a4b70f01f7ba0b57aa1fc09ed636ce"
+  },
+  {
+    "path": "Dockerfile",
+    "bytes": 182,
+    "sha256": "1ac32531d85c7d54bce3eb1fee56f52570b5eb2bda59bdfe41479db46c5b7b51"
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1089,
+    "sha256": "65e2119cc921b848e3a941860defaa9fbf86267dbf2dc2fe7efbb36dd0cf3024"
+  },
+  {
+    "path": "README.md",
+    "bytes": 11800,
+    "sha256": "a36086658097b309b41f122344b96ae1bc6139586c6ffd285ddb228e335a2d4a"
+  },
+  {
+    "path": "SECURITY.md",
+    "bytes": 626,
+    "sha256": "864bb01d9e7dda3c35d3e91504d4785e59280daa1db3c247b67aea8cb0fce058"
+  },
+  {
+    "path": "docker-compose.local.yml",
+    "bytes": 1705,
+    "sha256": "4cbcc07cab08daceb28fdfc751907976e3b8b746e59771ad39354232d75a4a99"
+  },
+  {
+    "path": "n8n-service-variables.example.txt",
+    "bytes": 1434,
+    "sha256": "9541205e99c1c7cc3ae54b545ed6d36e25bac29dce068fa8ea190541243a97fd"
+  },
+  {
+    "path": "railway.json",
+    "bytes": 299,
+    "sha256": "351b69db505b1be57f5557b20f3e9b8d64cd926e377a448c535e5d04cf0f63af"
+  },
+  {
+    "path": "scripts/generate-key.ps1",
+    "bytes": 273,
+    "sha256": "9285873f9fc1528e0c9fb76526e7ba928bb14d76d1518708bab8c42a3aa357e6"
+  },
+  {
+    "path": "scripts/generate-key.sh",
+    "bytes": 194,
+    "sha256": "0240d063a1a2f9793ef38aca2a1b673448f15e520f8150a34e1113df145b6a31"
+  },
+  {
+    "path": "scripts/validate-repo.py",
+    "bytes": 3059,
+    "sha256": "458dc4086f0beebac35c2c49fa815f4a6fd5aa6a58f525abe912e4cfe31bc047"
+  }
+]
