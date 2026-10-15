@@ -2,39 +2,25 @@
 
 # 🚀 n8n Railway Starter
 
-**Deploy n8n + PostgreSQL di Railway.**
+**Instal n8n + PostgreSQL di Railway.**
 
 </div>
 
-## Instalasi
+## Cara Instalasi
 
-### Tahap 1 — Buat project Railway
-Buat project di [Railway](https://railway.com/). PostgreSQL dan n8n harus berada di project serta environment yang sama.
+1. **Buat project dan PostgreSQL.** Di [Railway](https://railway.com/), buat project lalu pilih **New → Database → PostgreSQL**. Tunggu hingga database sehat. Gunakan nama service `Postgres`, serta tempatkan database dan n8n di project/environment yang sama. Railway membuat variabel database otomatis; **jangan membuat atau menempelkan variabel database secara manual**.
 
-### Tahap 2 — Tambahkan PostgreSQL terlebih dahulu
-1. Pilih **New → Database → PostgreSQL**.
-2. Tunggu sampai database sehat/online.
-3. Gunakan nama service **Postgres** agar cocok dengan variabel di bawah.
+2. **Siapkan repo GitHub.** Fork repo ini atau unggah isinya ke GitHub. Pastikan `Dockerfile` berada di root repo.
 
-Railway membuat variabel database otomatis; **jangan membuat atau menempelkan variabel database secara manual**.
+3. **Deploy n8n.** Di project Railway yang sama, pilih **New → GitHub Repo**, lalu pilih repo ini. Biarkan Root Directory kosong.
 
-### Tahap 3 — Siapkan repo
-Fork repo ini atau unggah isinya ke GitHub. Pastikan `Dockerfile` berada di root. Jangan unggah password atau key rahasia.
+4. **Buat domain dan volume.** Pada service n8n, buka **Settings → Networking → Generate Domain**, lalu tambahkan volume dengan mount path `/home/node/.n8n`.
 
-### Tahap 4 — Deploy service n8n dari GitHub
-Di project yang sama, pilih **New → GitHub Repo**, lalu pilih repo ini. Biarkan Root Directory kosong.
+5. **Buat key dan pasang variabel.** Jalankan:
+   - Windows: `.\scripts\generate-key.ps1`
+   - Linux/macOS: `sh scripts/generate-key.sh`
 
-### Tahap 5 — Buat domain dan volume
-Pada **service n8n**:
-1. **Settings → Networking → Generate Domain**.
-2. Tambahkan volume dengan mount path `/home/node/.n8n`.
-
-### Tahap 6 — Tempel variabel
-Buat encryption key:
-- **Windows:** `.\scripts\generate-key.ps1`
-- **Linux/macOS:** `sh scripts/generate-key.sh`
-
-Salin blok berikut ke **n8n → Variables → Raw Editor**. Ganti placeholder key. Blok ini hanya untuk service **n8n**, bukan Postgres.
+   Salin blok di bawah ke **n8n → Variables → Raw Editor**. Ganti `REPLACE_WITH_YOUR_64_CHARACTER_HEX_KEY` dengan key yang dihasilkan. Blok ini hanya untuk service n8n, bukan PostgreSQL.
 
 ```dotenv
 N8N_PORT=5678
@@ -64,15 +50,13 @@ EXECUTIONS_DATA_PRUNE=true
 EXECUTIONS_DATA_MAX_AGE=168
 ```
 
-Jika nama service database bukan `Postgres`, ubah namespace `Postgres` pada referensi database. Simpan encryption key dengan aman dan jangan menggantinya setelah membuat kredensial.
+Jika nama database bukan `Postgres`, ubah `Postgres` pada referensi variabel di atas. Simpan key dengan aman dan jangan menggantinya setelah membuat kredensial. `RAILWAY_RUN_UID=0` membantu mengatasi izin volume pada setup ini, tetapi menjalankan proses sebagai root.
 
-> `RAILWAY_RUN_UID=0` mengatasi izin volume pada setup ini, tetapi menjalankan proses sebagai root.
-
-### Tahap 7 — Deploy
-Simpan variabel, redeploy n8n, lalu buka domain Railway. Pastikan log menunjukkan n8n siap dan uji satu workflow sederhana.
+6. **Deploy dan uji.** Simpan variabel, redeploy n8n, buka domain Railway, buat akun owner, lalu jalankan satu workflow percobaan.
 
 ## Troubleshooting
-- **Database gagal tersambung:** periksa status Postgres, nama service, dan project/environment.
+
+- **Database gagal tersambung:** periksa status PostgreSQL, nama service, serta project/environment.
 - **`EACCES: permission denied`:** pastikan volume terpasang di `/home/node/.n8n` dan `RAILWAY_RUN_UID=0` disetel.
 
 **Backup:** simpan backup PostgreSQL dan `N8N_ENCRYPTION_KEY` secara terpisah sebelum upgrade.
