@@ -36,8 +36,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 3067,
-    "sha256": "3264363ec753056fe87952237e8d4f8ab26fcc317ff9c50a168e61d9cba0d92b"
+    "bytes": 2917,
+    "sha256": "899d480b73cd0904efcb6488bbde37f86be1287bcb98e15422f8b28388975c1f"
   },
   {
     "path": "SECURITY.md",
@@ -71,7 +71,7 @@
   },
   {
     "path": "scripts/validate-repo.py",
-    "bytes": 3059,
-    "sha256": "458dc4086f0beebac35c2c49fa815f4a6fd5aa6a58f525abe912e4cfe31bc047"
+    "bytes": 3022,
+    "sha256": "fc77f0cde81ccf54796ce5eea7cc9cc0b029523c634a64b4d88ad1aeb2b9b82b"
   }
 ]
