@@ -169,6 +169,7 @@ The release is pinned using `ARG N8N_VERSION` in `Dockerfile`, currently `2.43.5
 From the repository root, run these static checks:
 
 ```bash
+python scripts/update-manifest.py
 python scripts/validate-repo.py
 python scripts/check_docs.py
 python -m json.tool railway.json
