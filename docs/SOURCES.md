@@ -24,6 +24,6 @@ This repository is a deployment starter for running the official n8n container w
 
 ## License scope and trademarks
 
-The root [`LICENSE`](../LICENSE) applies to this repository's own template material, scripts, and documentation to the extent covered by that license. It does **not** relicense the upstream n8n image or PostgreSQL, grant rights to third-party trademarks, or override platform terms.
+The root [`LICENSE`](../LICENSE) is the project's MIT License. It applies to this repository's own template material, scripts, and documentation to the extent covered by that license. It does **not** relicense the upstream n8n image or PostgreSQL, grant rights to third-party trademarks, or override platform terms.
 
 n8n's self-hosted software uses its own Sustainable Use License (and other terms may apply to particular editions or use cases). Read the current [n8n license](https://docs.n8n.io/sustainable-use-license/) and [license FAQ](https://support.n8n.io/article/can-i-use-your-license-for-my-use-case) before commercial use or redistribution. Railway, Docker, PostgreSQL, and n8n names and marks belong to their respective owners. This independent starter is not affiliated with or endorsed by them.
