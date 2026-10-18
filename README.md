@@ -41,7 +41,7 @@ Starter ini menyiapkan **n8n dan PostgreSQL sebagai dua service terpisah di satu
 
 ## Instalasi Railway
 
-### 1. Buat project dan PostgreSQL.
+### 1. **Buat project dan PostgreSQL.**
 
 Di [Railway](https://railway.com/), buat project lalu pilih **New → Database → PostgreSQL**. Tunggu hingga database sehat. Gunakan nama service `Postgres` serta tempatkan database dan n8n di project/environment yang sama. Railway membuat variabel database otomatis; **jangan membuat atau menempelkan variabel database secara manual**.
 
@@ -51,7 +51,7 @@ Jika nama service berbeda, sesuaikan awalan `Postgres` pada reference variables.
 
 Fork repo ini atau unggah isinya ke GitHub. Pastikan `Dockerfile` dan `railway.json` berada di root repo.
 
-### 3. Deploy n8n.
+### 3. **Deploy n8n.**
 
 Di project Railway yang sama, pilih **New → GitHub Repo**, lalu pilih repo ini. Biarkan **Root Directory** kosong agar Railway menemukan konfigurasi build.
 
