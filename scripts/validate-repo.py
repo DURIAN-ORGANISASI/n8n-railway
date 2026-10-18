@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -104,6 +105,16 @@ if "docs/SOURCES.md" not in readme or "docs/SOURCES.md" not in readme_en:
     errors.append("Both READMEs must link to docs/SOURCES.md")
 if "MIT does not" not in readme_en and "does not" not in readme_en:
     errors.append("English README must explain that the root MIT license does not relicense n8n")
+
+manifest_check = subprocess.run(
+    [sys.executable, str(ROOT / "scripts" / "update-manifest.py"), "--check"],
+    capture_output=True,
+    text=True,
+    check=False,
+)
+if manifest_check.returncode != 0:
+    detail = manifest_check.stderr.strip() or manifest_check.stdout.strip()
+    errors.append(f"FILE-MANIFEST.json check failed: {detail}")
 
 if errors:
     print("Validation FAILED:")
