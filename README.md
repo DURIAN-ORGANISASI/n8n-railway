@@ -4,8 +4,6 @@
 
 # n8n Railway Starter
 
-**Deploy n8n + PostgreSQL di Railway dengan penyimpanan persisten, variabel contoh, dan kunci enkripsi yang dibuat secara kriptografis.**
-
 <p>
   <a href="https://github.com/DURIAN-ORGANISASI/n8n-railway/actions/workflows/validate.yml"><img alt="Repository validation" src="https://img.shields.io/github/actions/workflow/status/DURIAN-ORGANISASI/n8n-railway/validate.yml?branch=main&amp;label=validation&amp;logo=githubactions&amp;logoColor=white"></a>
   <a href="LICENSE"><img alt="MIT License for this starter" src="https://img.shields.io/github/license/DURIAN-ORGANISASI/n8n-railway?label=starter%20license"></a>
@@ -15,6 +13,8 @@
 </p>
 
 <p><a href="README.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.en.md">🇬🇧 English</a></p>
+
+**Deploy n8n + PostgreSQL di Railway dengan penyimpanan persisten, variabel contoh, dan kunci enkripsi yang dibuat secara kriptografis.**
 
 <p>
   <a href="#fitur-utama">Fitur utama</a> ·
@@ -27,6 +27,7 @@
 </p>
 
 </div>
+
 
 ![Ilustrasi deployment n8n Railway](docs/hero.id.svg)
 
