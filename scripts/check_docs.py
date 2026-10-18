@@ -10,7 +10,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(\s*(?:<([^>]+)>|([^\s)]+))")
-HTML_SRC_RE = re.compile(r"""<(?:img|source)\b[^>]*?\bsrc=["']([^"']+)["']""", re.IGNORECASE)
+HTML_ATTR_RE = re.compile(r"""<(?:a|img|source|link)\b[^>]*?\b(?:href|src)=["']([^"']+)["']""", re.IGNORECASE)
 FENCED_BLOCK_RE = re.compile(r"(?ms)^[ \t]{0,3}(`{3,}|~{3,})[^\n]*\n.*?^[ \t]{0,3}\1[ \t]*$")
 SVG_NS = "{http://www.w3.org/2000/svg}"
 
@@ -28,8 +28,8 @@ def referenced_local_paths(markdown_path: Path) -> list[tuple[str, str]]:
     references = []
     for match in MARKDOWN_LINK_RE.finditer(source):
         references.append((match.group(1) or match.group(2), "Markdown link/image"))
-    for match in HTML_SRC_RE.finditer(source):
-        references.append((match.group(1), "HTML src"))
+    for match in HTML_ATTR_RE.finditer(source):
+        references.append((match.group(1), "HTML href/src"))
     return references
 
 
