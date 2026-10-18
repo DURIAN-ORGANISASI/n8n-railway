@@ -14,7 +14,7 @@
 
 <p><a href="README.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.en.md">🇬🇧 English</a></p>
 
-**Deploy n8n + PostgreSQL di Railway dengan penyimpanan persisten, variabel contoh, dan kunci enkripsi yang dibuat secara kriptografis.**
+<p><strong>Deploy n8n + PostgreSQL di Railway dengan penyimpanan persisten, variabel contoh, dan kunci enkripsi yang dibuat secara kriptografis.</strong></p>
 
 <p>
   <a href="#fitur-utama">Fitur utama</a> ·
