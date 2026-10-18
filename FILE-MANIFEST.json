@@ -36,13 +36,13 @@
   },
   {
     "path": "README.en.md",
-    "bytes": 9615,
-    "sha256": "3a5c5d3294667451800f23ffdf5280979468feaf699108aa2cd3e59c2dbd3735"
+    "bytes": 11425,
+    "sha256": "55104d86a84f44dd38061bbc7ccbef40072b179dd3e19a17376fe1b3003e31a6"
   },
   {
     "path": "README.md",
-    "bytes": 9176,
-    "sha256": "5360391446bc225443593f6796e0590548ff794a2c6f5392f728baceeedd8fc2"
+    "bytes": 11010,
+    "sha256": "18e1f3dc3a8d4f0107b511d209444d28daa7d896266388e5cc5b20849759c0a3"
   },
   {
     "path": "SECURITY.md",
@@ -56,13 +56,28 @@
   },
   {
     "path": "docs/SOURCES.md",
-    "bytes": 3062,
-    "sha256": "9b7884ea0742b6a4075bf9bf011e7001d3f59ea1783041f6e9ea00ccf5a6e889"
+    "bytes": 3254,
+    "sha256": "763ad2276d22f76641f74859d82bfe679db77be01faf3455c6a51fe1e4dc6d41"
   },
   {
     "path": "docs/architecture.svg",
     "bytes": 6537,
     "sha256": "e363465a1e5f58969bab595653bcf44785df56cb1eb4b24ba321f5702047faa6"
+  },
+  {
+    "path": "docs/hero.en.svg",
+    "bytes": 4901,
+    "sha256": "389b401a5c7453b76026a803c4f763b4ce02c9d458324ab09b34b4ec37a4b148"
+  },
+  {
+    "path": "docs/hero.id.svg",
+    "bytes": 4910,
+    "sha256": "9cb167b11160c64eb2c83278f0140f37987039ebef82a15dfd89a3cb089ffecc"
+  },
+  {
+    "path": "docs/logo.svg",
+    "bytes": 1420,
+    "sha256": "f01be10c864c43118374d393d546fdf73261a9ee67610ea83747e19b10c57b49"
   },
   {
     "path": "n8n-service-variables.example.txt",
@@ -96,7 +111,7 @@
   },
   {
     "path": "scripts/validate-repo.py",
-    "bytes": 5344,
-    "sha256": "e0e505872012dd2fc751335817864bc02d6d6d3ef9efb3c8967493716f3c1191"
+    "bytes": 5996,
+    "sha256": "5b96815d154d5fcb9f7b2f2fb33d63f4fbafdce4b8056d75710413ac40498057"
   }
 ]
