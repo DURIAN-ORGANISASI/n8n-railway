@@ -1,0 +1,19 @@
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+
+# Python/editor/OS files
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local data and backups
+*.dump
+*.sql
+*.sqlite
+*.sqlite3
+backups/
