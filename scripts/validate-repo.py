@@ -23,6 +23,9 @@ REQUIRED_FILES = [
     "SECURITY.md",
     "docs/SOURCES.md",
     "docs/architecture.svg",
+    "docs/logo.svg",
+    "docs/hero.id.svg",
+    "docs/hero.en.svg",
     "docker-compose.local.yml",
     "n8n-service-variables.example.txt",
     "railway.json",
@@ -87,6 +90,14 @@ if "## Sources, attribution, and licensing" not in readme_en:
     errors.append("English README must include source attribution and license scope")
 if "docs/architecture.svg" not in readme or "docs/architecture.svg" not in readme_en:
     errors.append("Both READMEs must use the validated architecture diagram")
+if "docs/logo.svg" not in readme or "docs/logo.svg" not in readme_en:
+    errors.append("Both READMEs must use the repository logo")
+if "docs/hero.id.svg" not in readme or "docs/hero.en.svg" not in readme_en:
+    errors.append("Each README must use its localized hero illustration")
+if "## Fitur utama" not in readme or "## Key features" not in readme_en:
+    errors.append("Both READMEs must summarize the starter's key features")
+if "## Isi repositori" not in readme or "## Repository layout" not in readme_en:
+    errors.append("Both READMEs must document the repository layout")
 if "N8N_ENCRYPTION_KEY" not in readme or "N8N_ENCRYPTION_KEY" not in readme_en:
     errors.append("Both READMEs must explain the n8n encryption key")
 if "RAILWAY_RUN_UID=0" not in readme or "runs the process as root" not in readme_en.lower():
