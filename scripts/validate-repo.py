@@ -27,6 +27,8 @@ REQUIRED_FILES = [
     "n8n-service-variables.example.txt",
     "railway.json",
     "scripts/check_docs.py",
+    "scripts/validate-repo.py",
+    "scripts/update-manifest.py",
     "scripts/generate-key.ps1",
     "scripts/generate-key.sh",
 ]
