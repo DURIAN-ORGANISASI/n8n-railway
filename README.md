@@ -167,6 +167,7 @@ Versi dipatok lewat `ARG N8N_VERSION` di `Dockerfile`, saat ini `2.43.5`. Ini **
 Dari root repo, jalankan pemeriksaan statis:
 
 ```bash
+python scripts/update-manifest.py
 python scripts/validate-repo.py
 python scripts/check_docs.py
 python -m json.tool railway.json
