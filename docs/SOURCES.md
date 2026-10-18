@@ -19,7 +19,8 @@ This repository is a deployment starter for running the official n8n container w
 
 - `Dockerfile` selects the upstream `n8nio/n8n` image and pins the release using `N8N_VERSION`.
 - `scripts/generate-key.ps1` and `scripts/generate-key.sh` use platform cryptographic random-number generators to create a 32-byte hexadecimal encryption key.
-- `docs/architecture.svg` is a diagram created for this repository. It is a documentation illustration, not an official Railway or n8n screenshot.
+- `docs/logo.svg` is the project's original visual mark, and `docs/hero.id.svg` / `docs/hero.en.svg` are original README illustrations created for this repository.
+- `docs/architecture.svg` is a project-created architecture diagram. These files are documentation artwork, not official Railway or n8n screenshots, logos, or product assets.
 
 ## License scope and trademarks
 
