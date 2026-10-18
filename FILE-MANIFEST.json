@@ -1,33 +1,33 @@
 [
   {
     "path": ".dockerignore",
-    "bytes": 88,
-    "sha256": "e330073c1b667b0d782f927226fcf8004fa2fedff26425b7a5b11ea8f7b58d4d"
+    "bytes": 61,
+    "sha256": "cb85942eabb84c6fe083b46ca2df311bf3bbf41c3914a01f534ece823d9bad2f"
   },
   {
     "path": ".env.example",
-    "bytes": 434,
-    "sha256": "ee51e23f92ca220f01269f167c61414b059ce72cdfbf972e10252459c04086b1"
+    "bytes": 404,
+    "sha256": "ec152f05f8b6c137d12fa0ab68bcb8a5cd59fe3102d4706ec70f075f5b6e6c1c"
   },
   {
     "path": ".github/workflows/validate.yml",
-    "bytes": 375,
-    "sha256": "3b3b729dd1549dac520ed51d53d9445f88dfcfddd13d95798a1446465df83437"
+    "bytes": 1521,
+    "sha256": "976ef96e8d90cdb2134f64fbaee9345c26eac535535f7aa1b2ce4f9a354906ad"
   },
   {
     "path": ".gitignore",
-    "bytes": 170,
-    "sha256": "c3dc31914e7fe498ac2d035d1767e06a1c1371d2fcd00c33f328d1e2fa05a0f7"
+    "bytes": 220,
+    "sha256": "fce347eaa557b8266e00574cf435a76148363dcb1e1e40844f02dd79fd904bf7"
   },
   {
     "path": "CONTRIBUTING.md",
-    "bytes": 508,
-    "sha256": "3f2bed3807b2abd8ce47f916c69c697b60a4b70f01f7ba0b57aa1fc09ed636ce"
+    "bytes": 2110,
+    "sha256": "c496770e7686c360ddd31e018c49e49237c36c4caa63dca55bd47dff1d83d1b1"
   },
   {
     "path": "Dockerfile",
-    "bytes": 182,
-    "sha256": "1ac32531d85c7d54bce3eb1fee56f52570b5eb2bda59bdfe41479db46c5b7b51"
+    "bytes": 260,
+    "sha256": "ac300facb67a0304d3292be5e28557a346c430c07617a5adc24797f1ee273a7d"
   },
   {
     "path": "LICENSE",
@@ -35,19 +35,34 @@
     "sha256": "65e2119cc921b848e3a941860defaa9fbf86267dbf2dc2fe7efbb36dd0cf3024"
   },
   {
+    "path": "README.en.md",
+    "bytes": 9615,
+    "sha256": "3a5c5d3294667451800f23ffdf5280979468feaf699108aa2cd3e59c2dbd3735"
+  },
+  {
     "path": "README.md",
-    "bytes": 3187,
-    "sha256": "0686dfdca9054852399b9ae79bd0c8698e21e7bd9d0126252f62f80d54fc556c"
+    "bytes": 9176,
+    "sha256": "5360391446bc225443593f6796e0590548ff794a2c6f5392f728baceeedd8fc2"
   },
   {
     "path": "SECURITY.md",
-    "bytes": 626,
-    "sha256": "864bb01d9e7dda3c35d3e91504d4785e59280daa1db3c247b67aea8cb0fce058"
+    "bytes": 2229,
+    "sha256": "f96fe46e68c1dd588c4c0cb97f93b8cc5f0e8e59f9719aa3ab553fad4163b4ed"
   },
   {
     "path": "docker-compose.local.yml",
     "bytes": 1705,
     "sha256": "4cbcc07cab08daceb28fdfc751907976e3b8b746e59771ad39354232d75a4a99"
+  },
+  {
+    "path": "docs/SOURCES.md",
+    "bytes": 3062,
+    "sha256": "9b7884ea0742b6a4075bf9bf011e7001d3f59ea1783041f6e9ea00ccf5a6e889"
+  },
+  {
+    "path": "docs/architecture.svg",
+    "bytes": 6537,
+    "sha256": "e363465a1e5f58969bab595653bcf44785df56cb1eb4b24ba321f5702047faa6"
   },
   {
     "path": "n8n-service-variables.example.txt",
@@ -60,6 +75,11 @@
     "sha256": "351b69db505b1be57f5557b20f3e9b8d64cd926e377a448c535e5d04cf0f63af"
   },
   {
+    "path": "scripts/check_docs.py",
+    "bytes": 3966,
+    "sha256": "48c4c77e05ab01f49ec724a70de0babaa79022d9e740c9b9af9d36d18e050f58"
+  },
+  {
     "path": "scripts/generate-key.ps1",
     "bytes": 273,
     "sha256": "9285873f9fc1528e0c9fb76526e7ba928bb14d76d1518708bab8c42a3aa357e6"
@@ -70,8 +90,13 @@
     "sha256": "0240d063a1a2f9793ef38aca2a1b673448f15e520f8150a34e1113df145b6a31"
   },
   {
+    "path": "scripts/update-manifest.py",
+    "bytes": 2203,
+    "sha256": "15d06e0b88cce73228ca6e7a21a7b02b5565afcf3ef0ed2f61d951e2a0275d12"
+  },
+  {
     "path": "scripts/validate-repo.py",
-    "bytes": 3022,
-    "sha256": "fc77f0cde81ccf54796ce5eea7cc9cc0b029523c634a64b4d88ad1aeb2b9b82b"
+    "bytes": 5344,
+    "sha256": "e0e505872012dd2fc751335817864bc02d6d6d3ef9efb3c8967493716f3c1191"
   }
 ]

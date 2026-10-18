@@ -1,0 +1,60 @@
+name: Repository validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "README*.md"
+      - "CONTRIBUTING.md"
+      - "SECURITY.md"
+      - "LICENSE"
+      - "Dockerfile"
+      - "railway.json"
+      - "docker-compose.local.yml"
+      - "n8n-service-variables.example.txt"
+      - ".env.example"
+      - ".gitignore"
+      - ".dockerignore"
+      - "FILE-MANIFEST.json"
+      - "docs/**"
+      - "scripts/**"
+      - ".github/workflows/validate.yml"
+  pull_request:
+    paths:
+      - "README*.md"
+      - "CONTRIBUTING.md"
+      - "SECURITY.md"
+      - "LICENSE"
+      - "Dockerfile"
+      - "railway.json"
+      - "docker-compose.local.yml"
+      - "n8n-service-variables.example.txt"
+      - ".env.example"
+      - ".gitignore"
+      - ".dockerignore"
+      - "FILE-MANIFEST.json"
+      - "docs/**"
+      - "scripts/**"
+      - ".github/workflows/validate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate deployment template and documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Validate Railway and n8n configuration
+        run: python scripts/validate-repo.py
+      - name: Validate local links and documentation SVGs
+        run: python scripts/check_docs.py
+      - name: Validate Railway JSON syntax
+        run: python -m json.tool railway.json > /dev/null
