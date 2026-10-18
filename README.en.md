@@ -14,7 +14,8 @@
 
 <p><a href="README.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.en.md">🇬🇧 English</a></p>
 
-<p><strong>Deploy n8n + PostgreSQL on Railway with persistent storage, documented settings, and a cryptographically generated encryption key.</strong></p>
+<p><strong>Deploy n8n + PostgreSQL on Railway.</strong><br>
+Persistent storage, documented settings, and a cryptographically generated encryption key.</p>
 
 <p>
   <a href="#key-features">Key features</a> ·
