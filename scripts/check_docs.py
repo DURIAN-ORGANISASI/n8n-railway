@@ -11,7 +11,7 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]]*\]\(\s*(?:<([^>]+)>|([^\s)]+))")
 HTML_SRC_RE = re.compile(r"""<(?:img|source)\b[^>]*?\bsrc=["']([^"']+)["']""", re.IGNORECASE)
-FENCED_BLOCK_RE = re.compile(r"(?ms)^[ \t]{0,3}({3,}|~{3,})[^\n]*\n.*?^[ \t]{0,3}\1[ \t]*$")
+FENCED_BLOCK_RE = re.compile(r"(?ms)^[ \t]{0,3}(`{3,}|~{3,})[^\n]*\n.*?^[ \t]{0,3}\1[ \t]*$")
 SVG_NS = "{http://www.w3.org/2000/svg}"
 
 
