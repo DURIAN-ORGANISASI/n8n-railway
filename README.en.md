@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/logo.svg" alt="n8n Railway Starter" width="84" height="84">
+
 # n8n Railway Starter
 
 **Deploy n8n + PostgreSQL on Railway with persistent storage, documented settings, and a cryptographically generated encryption key.**
@@ -15,14 +17,20 @@
 <p><a href="README.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.en.md">🇬🇧 English</a></p>
 
 <p>
-  <a href="#railway-deployment">Railway deployment</a> ·
+  <a href="#key-features">Key features</a> ·
   <a href="#architecture">Architecture</a> ·
+  <a href="#repository-layout">Repository layout</a> ·
+  <a href="#railway-deployment">Railway deployment</a> ·
   <a href="#security-and-backups">Security &amp; backups</a> ·
   <a href="#troubleshooting">Troubleshooting</a> ·
   <a href="#sources-attribution-and-licensing">Sources &amp; license</a>
 </p>
 
 </div>
+
+![n8n Railway deployment overview](docs/hero.en.svg)
+
+<p align="center"><sub>Project-created documentation artwork — not an official n8n or Railway screenshot or asset.</sub></p>
 
 ---
 
@@ -33,11 +41,33 @@ This starter deploys **n8n and PostgreSQL as separate services in the same Railw
 > [!IMPORTANT]
 > **The MIT license in this repository is not the license for n8n itself.** MIT covers this starter's own material to the extent included in the license; n8n Community Edition has its own upstream license. Read [Sources, attribution, and licensing](#sources-attribution-and-licensing) before use or redistribution.
 
+## Key features
+
+| Capability | What is included |
+| --- | --- |
+| Controlled deployment | The Dockerfile pins the n8n release to avoid accidental upgrades. |
+| Separate database | PostgreSQL connects through Railway reference variables rather than pasted credentials in documentation. |
+| Persistent storage | A Railway Volume for local n8n state; PostgreSQL stores application data. |
+| Security setup | Encryption-key generator, variable templates, and an explicit note about permission-workaround risk. |
+| Local development | Docker Compose plus static checks for configuration, documentation links, and SVG assets. |
+
 ## Architecture
 
 ![n8n and PostgreSQL deployment architecture on Railway](docs/architecture.svg)
 
 <sub>A project-created conceptual diagram, not an official n8n or Railway screenshot.</sub>
+
+## Repository layout
+
+| Path | Purpose |
+| --- | --- |
+| **Dockerfile** and **railway.json** | Build image, Railway deployment settings, and health check. |
+| **n8n-service-variables.example.txt** | n8n-service-only variable template with secret placeholders and PostgreSQL references. |
+| **.env.example** and **docker-compose.local.yml** | Run the local stack without committing secrets. |
+| **scripts/** | Generate the encryption key, validate configuration, check docs, and refresh the file manifest. |
+| **docs/SOURCES.md** | Upstream technical references, diagram attribution, license scope, and trademark notes. |
+| **CONTRIBUTING.md** and **SECURITY.md** | Contribution workflow and security reporting/handling guidance. |
+| **FILE-MANIFEST.json** | File sizes and SHA-256 hashes to help detect unrecorded changes. |
 
 ## Railway deployment
 
