@@ -28,7 +28,6 @@
 
 </div>
 
-
 ![Ilustrasi deployment n8n Railway](docs/hero.id.svg)
 
 <p align="center"><sub>Ilustrasi dokumentasi buatan proyek — bukan tangkapan layar atau aset resmi n8n maupun Railway.</sub></p>
