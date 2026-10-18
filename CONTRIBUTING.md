@@ -15,6 +15,7 @@ Thanks for improving this Railway starter. Keep pull requests focused, explain t
 Python 3.10+ is enough; no third-party package installation is needed for the static checks.
 
 ```bash
+python scripts/update-manifest.py
 python scripts/validate-repo.py
 python scripts/check_docs.py
 python -m json.tool railway.json
