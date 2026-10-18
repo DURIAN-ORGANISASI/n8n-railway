@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/logo.svg" alt="n8n Railway Starter" width="84" height="84">
+
 # n8n Railway Starter
 
 **Deploy n8n + PostgreSQL di Railway dengan penyimpanan persisten, variabel contoh, dan kunci enkripsi yang dibuat secara kriptografis.**
@@ -15,14 +17,20 @@
 <p><a href="README.md">🇮🇩 Bahasa Indonesia</a> · <a href="README.en.md">🇬🇧 English</a></p>
 
 <p>
-  <a href="#instalasi-railway">Instalasi Railway</a> ·
+  <a href="#fitur-utama">Fitur utama</a> ·
   <a href="#arsitektur">Arsitektur</a> ·
+  <a href="#isi-repositori">Isi repositori</a> ·
+  <a href="#instalasi-railway">Instalasi Railway</a> ·
   <a href="#keamanan-dan-backup">Keamanan &amp; backup</a> ·
   <a href="#troubleshooting">Troubleshooting</a> ·
   <a href="#sumber-atribusi-dan-lisensi">Sumber &amp; lisensi</a>
 </p>
 
 </div>
+
+![Ilustrasi deployment n8n Railway](docs/hero.id.svg)
+
+<p align="center"><sub>Ilustrasi dokumentasi buatan proyek — bukan tangkapan layar atau aset resmi n8n maupun Railway.</sub></p>
 
 ---
 
@@ -33,11 +41,33 @@ Starter ini menyiapkan **n8n dan PostgreSQL sebagai dua service terpisah di satu
 > [!IMPORTANT]
 > **MIT di repo ini bukan lisensi untuk software n8n.** MIT mencakup materi proyek yang tercakup dalam lisensi tersebut; n8n Community Edition memiliki lisensi upstream sendiri. Baca [Sumber, atribusi, dan lisensi](#sumber-atribusi-dan-lisensi) sebelum memakai atau mendistribusikan ulang.
 
+## Fitur utama
+
+| Kapabilitas | Yang disediakan |
+| --- | --- |
+| Deploy terkontrol | **Dockerfile** mengunci versi n8n agar upgrade tidak terjadi tanpa sengaja. |
+| Database terpisah | PostgreSQL terhubung memakai reference variables Railway, bukan kredensial yang ditempel ke dokumentasi. |
+| Penyimpanan persisten | Railway Volume untuk state lokal n8n; PostgreSQL menyimpan data aplikasi. |
+| Pengaturan keamanan | Skrip pembuat encryption key, contoh variabel, dan catatan risiko permission yang eksplisit. |
+| Pengembangan lokal | Docker Compose serta pemeriksaan statis untuk konfigurasi, tautan dokumentasi, dan SVG. |
+
 ## Arsitektur
 
 ![Diagram arsitektur n8n dan PostgreSQL di Railway](docs/architecture.svg)
 
 <sub>Diagram konseptual buatan proyek, bukan screenshot resmi n8n atau Railway.</sub>
+
+## Isi repositori
+
+| Path | Peran |
+| --- | --- |
+| **Dockerfile** dan **railway.json** | Build image, konfigurasi deploy, dan health check Railway. |
+| **n8n-service-variables.example.txt** | Template variables khusus service n8n dengan placeholder untuk secret dan referensi PostgreSQL. |
+| **.env.example** dan **docker-compose.local.yml** | Menjalankan stack lokal tanpa memasukkan secret ke Git. |
+| **scripts/** | Membuat encryption key, memvalidasi konfigurasi, memeriksa dokumentasi, dan memperbarui manifest file. |
+| **docs/SOURCES.md** | Referensi teknis upstream, atribusi diagram, batas lisensi, dan catatan merek dagang. |
+| **CONTRIBUTING.md** dan **SECURITY.md** | Alur kontribusi dan pelaporan/penanganan isu keamanan. |
+| **FILE-MANIFEST.json** | Ukuran file dan SHA-256 untuk membantu mendeteksi perubahan yang belum tercatat. |
 
 ## Instalasi Railway
 
